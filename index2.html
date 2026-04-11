@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Al-Wabil Academy | Quran & Arabic Language Institute</title>
+  <meta name="description" content="Learn Quranic Arabic with Umm e Wabil — Master's degree, 11+ years experience, visual teaching method."/>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Elegant Islamic-inspired palette */
+      --gold: #C9933A;
+      --gold-light: #F0D080;
+      --gold-dark: #854F0B;
+      --navy: #0B1E38;
+      --navy-mid: #122840;
+      --navy-light: #1A3A5C;
+      --cream: #FAF6EE;
+      --cream-dark: #F0E8D8;
+      --text: #1A1208;
+      --text-mid: #4A3C28;
+      --text-muted: #8A7A60;
+      --white: #FFFFFF;
+      --shadow: 0 4px 20px rgba(11, 30, 56, 0.12);
+      --shadow-lg: 0 12px 40px rgba(11, 30, 56, 0.2);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --transition: all 0.3s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2.5rem;
+      background: rgba(11, 30, 56, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 147, 58, 0.25);
+      transition: var(--transition);
+    }
+    nav.scrolled { padding: 0.8rem 2.5rem; box-shadow: var(--shadow); }
+    
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+    .nav-logo-arabic {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px; font-weight: 600;
+      color: var(--gold); line-height: 1;
+    }
+    .nav-logo-text {
+      font-size: 14px; font-weight: 500; color: var(--white);
+      letter-spacing: 0.5px;
+    }
+    
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px; color: rgba(255,255,255,0.85);
+      text-decoration: none; font-weight: 500;
+      padding: 6px 0; position: relative;
+      transition: var(--transition);
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 2px; background: var(--gold);
+      transition: var(--transition);
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-links a:hover::after { width: 100%; }
+    
+    .nav-cta {
+      background: var(--gold); color: var(--navy);
+      padding: 10px 24px; border-radius: 8px;
+      font-size: 14px; font-weight: 600;
+      text-decoration: none; border: none;
+      cursor: pointer; transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .nav-cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 147, 58, 0.3);
+    }
+    
+    .nav-toggle {
+      display: none; font-size: 24px; color: var(--white);
+      background: none; border: none; cursor: pointer;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 8rem 2rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(201,147,58,0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(201,147,58,0.06) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,147,58,0.15);
+      border: 1px solid rgba(201,147,58,0.3);
+      color: var(--gold-light);
+      font-size: 12px; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 6px 20px;
+      border-radius: 30px; margin-bottom: 1.5rem;
+      animation: fadeInUp 0.6s ease both;
+    }
+    
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 7vw, 72px);
+      font-weight: 600; color: var(--white);
+      line-height: 1.1; margin-bottom: 0.8rem;
+      animation: fadeInUp 0.6s 0.1s ease both;
+    }
+    
+    .hero-subtitle {
+      font-size: 18px; color: var(--gold-light);
+      font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 1.5rem;
+      animation: fadeInUp 0.6s 0.2s ease both;
+    }
+    
+    .hero p {
+      max-width: 620px; font-size: 17px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 2.5rem; line-height: 1.8;
+      animation: fadeInUp 0.6s 0.3s ease both;
+    }
+    
+    .hero-btns {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeInUp 0.6s 0.4s ease both;
+    }
+    
+    .btn-primary {
+      background: var(--gold); color: var(--navy);
+      padding: 14px 32px; border-radius: 10px;
+      font-size: 15px; font-weight: 600;
+      text-decoration: none; border: none;
+      cursor: pointer; transition: var(--transition);
+      display: inline-flex; align-items: center; gap: 8px;
+      box-shadow: 0 4px 16px rgba(201,147,58,0.25);
+    }
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(201,147,58,0.4);
+    }
+    
+    .btn-ghost {
+      background: transparent; color: var(--white);
+      padding: 14px 32px; border-radius: 10px;
+      font-size: 15px; font-weight: 500;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      cursor: pointer; text-decoration: none;
+      transition: var(--transition);
+    }
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+      background: rgba(201,147,58,0.1);
+    }
+    
+    .hero-arabic {
+      position: absolute; font-family: 'Cormorant Garamond', serif;
+      font-size: 220px; line-height: 1;
+      color: rgba(201,147,58,0.05); pointer-events: none;
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      white-space: nowrap; direction: rtl;
+      animation: float 20s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    
+    @keyframes float {
+      from { transform: translate(-50%, -50%) scale(1); opacity: 0.04; }
+      to { transform: translate(-50%, -50%) scale(1.05); opacity: 0.07; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      background: var(--navy-light);
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(201,147,58,0.2);
+      border-bottom: 1px solid rgba(201,147,58,0.2);
+    }
+    .stat-cell {
+      padding: 1.4rem 1rem; text-align: center;
+      border-right: 1px solid rgba(201,147,58,0.15);
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 600; color: var(--gold);
+      line-height: 1;
+    }
+    .stat-lbl {
+      font-size: 12px; color: rgba(255,255,255,0.6);
+      margin-top: 5px; letter-spacing: 0.5px;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section { padding: 6rem 2rem; }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+    
+    .section-label {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 1rem;
+    }
+    .section-label span {
+      font-size: 12px; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--gold);
+      font-weight: 600;
+    }
+    .section-label::after {
+      content: ''; flex: 1; height: 1px;
+      background: var(--cream-dark);
+    }
+    
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 600; color: var(--navy);
+      line-height: 1.2; margin-bottom: 1.2rem;
+    }
+    
+    .section-desc {
+      font-size: 16px; color: var(--text-mid);
+      line-height: 1.8; max-width: 650px;
+      margin-bottom: 3rem;
+    }
+
+    /* ===== IMPORTANCE CARDS ===== */
+    .importance-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px; margin-top: 2rem;
+    }
+    .importance-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 2rem; text-align: center;
+      border: 1px solid var(--cream-dark);
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+    .importance-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow-lg);
+    }
+    .importance-icon {
+      font-size: 36px; margin-bottom: 1rem; display: block;
+    }
+    .importance-card h3 {
+      font-size: 18px; font-weight: 600; color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .importance-card p {
+      font-size: 14px; color: var(--text-mid);
+    }
+
+    /* ===== TEACHING METHOD ===== */
+    #method { background: var(--white); }
+    .method-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px; margin-top: 2.5rem;
+    }
+    .method-card {
+      background: var(--cream); border-radius: var(--radius);
+      padding: 2rem; border: 1px solid var(--cream-dark);
+      transition: var(--transition);
+    }
+    .method-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .method-icon {
+      font-size: 32px; margin-bottom: 1rem; display: block;
+    }
+    .method-card h3 {
+      font-size: 18px; font-weight: 600; color: var(--navy);
+      margin-bottom: 0.8rem;
+    }
+    .method-card p {
+      font-size: 15px; color: var(--text-mid);
+    }
+
+    /* ===== VIDEO BOX ===== */
+    .video-container {
+      margin: 3.5rem auto 0; max-width: 800px;
+      border-radius: var(--radius); overflow: hidden;
+      border: 2px solid rgba(201,147,58,0.3);
+      box-shadow: var(--shadow-lg);
+      background: #000;
+      position: relative; padding-bottom: 56.25%; height: 0;
+    }
+    .video-container iframe,
+    .video-container video {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: none;
+    }
+    .video-caption {
+      text-align: center; font-size: 14px;
+      color: var(--text-muted); margin-top: 1rem;
+    }
+
+    /* ===== COURSE LEVELS ===== */
+    #courses { background: var(--cream); }
+    .levels-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px; margin-top: 2.5rem;
+    }
+    .level-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 2.2rem 2rem; text-align: center;
+      border: 1px solid var(--cream-dark);
+      transition: var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .level-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .level-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold);
+    }
+    .level-card:hover::before { transform: scaleX(1); }
+    
+    .level-badge {
+      display: inline-block; font-size: 11px;
+      font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; padding: 4px 14px;
+      border-radius: 20px; margin-bottom: 1rem;
+    }
+    .level-basic { background: #E8F4E3; color: #2E6B2E; }
+    .level-medium { background: #FFF3E0; color: #A86400; }
+    .level-advance { background: #E3F2FD; color: #1565C0; }
+    
+    .level-card h3 {
+      font-size: 20px; font-weight: 600; color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .level-card p {
+      font-size: 14px; color: var(--text-mid);
+      margin-bottom: 1.5rem; line-height: 1.7;
+    }
+    .level-btn {
+      display: inline-block; font-size: 14px; font-weight: 600;
+      color: var(--gold); text-decoration: none;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 2px; transition: var(--transition);
+    }
+    .level-btn:hover {
+      color: var(--gold-dark);
+      border-color: var(--gold-dark);
+    }
+
+    /* ===== ABOUT ===== */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.2fr;
+      gap: 3rem; align-items: start; margin-top: 2.5rem;
+    }
+    .about-card {
+      background: var(--navy); border-radius: var(--radius);
+      padding: 2.5rem; text-align: center;
+      border: 1px solid rgba(201,147,58,0.3);
+    }
+    .about-avatar {
+      width: 90px; height: 90px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; color: white;
+      border: 3px solid rgba(201,147,58,0.5);
+    }
+    .about-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px; color: white; margin-bottom: 4px;
+    }
+    .about-role {
+      font-size: 12px; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--gold-light);
+      margin-bottom: 1.5rem;
+    }
+    .about-divider {
+      height: 1px; background: rgba(201,147,58,0.2);
+      margin: 1.5rem 0;
+    }
+    .about-detail {
+      font-size: 14px; color: rgba(255,255,255,0.7);
+      line-height: 2;
+    }
+    .about-arabic {
+      font-family: 'Cormorant Garamond', serif;
+      direction: rtl; font-size: 22px;
+      color: var(--gold-light); margin-top: 1.5rem;
+    }
+    
+    .about-content h3 {
+      font-size: 20px; font-weight: 600; color: var(--navy);
+      margin: 1.8rem 0 0.8rem;
+    }
+    .about-content p {
+      font-size: 15px; color: var(--text-mid);
+      line-height: 1.8; margin-bottom: 1.2rem;
+    }
+    .skills-list {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem;
+    }
+    .skill-tag {
+      background: var(--white); border: 1px solid var(--cream-dark);
+      border-radius: 20px; padding: 5px 14px;
+      font-size: 13px; color: var(--text-mid);
+      transition: var(--transition);
+    }
+    .skill-tag:hover {
+      border-color: var(--gold);
+      color: var(--navy);
+      background: rgba(201,147,58,0.08);
+    }
+
+    /* ===== TESTIMONIALS & RATING ===== */
+    #testimonials { background: var(--white); }
+    
+    .rating-box {
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      border-radius: var(--radius); padding: 2.5rem;
+      text-align: center; margin: 2.5rem 0;
+      border: 1px solid rgba(201,147,58,0.3);
+    }
+    .rating-stars {
+      display: flex; justify-content: center;
+      gap: 6px; font-size: 32px; color: var(--gold);
+      margin: 1rem 0;
+    }
+    .rating-text {
+      color: rgba(255,255,255,0.85); font-size: 15px;
+    }
+    
+    .comments-section { margin-top: 3rem; }
+    .comment-form {
+      background: var(--cream); border-radius: var(--radius);
+      padding: 2rem; border: 1px solid var(--cream-dark);
+      margin-bottom: 2.5rem;
+    }
+    .comment-form h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; color: var(--navy);
+      margin-bottom: 1.2rem;
+    }
+    .comment-form input,
+    .comment-form textarea {
+      width: 100%; padding: 12px 16px;
+      margin-bottom: 1rem; border: 1px solid var(--cream-dark);
+      border-radius: 10px; font-family: 'DM Sans', sans-serif;
+      font-size: 15px; background: var(--white);
+      color: var(--text); transition: var(--transition);
+    }
+    .comment-form input:focus,
+    .comment-form textarea:focus {
+      outline: none; border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,147,58,0.15);
+    }
+    .comment-form textarea { min-height: 110px; resize: vertical; }
+    .comment-form button {
+      background: var(--gold); color: var(--navy);
+      border: none; padding: 12px 28px; border-radius: 8px;
+      font-size: 15px; font-weight: 600; cursor: pointer;
+      transition: var(--transition);
+    }
+    .comment-form button:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    
+    .comments-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .comment-card {
+      background: var(--cream); border-radius: var(--radius-sm);
+      padding: 1.5rem; border-left: 4px solid var(--gold);
+    }
+    .comment-header {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-bottom: 0.6rem; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .comment-author { font-weight: 600; color: var(--navy); }
+    .comment-date { font-size: 12px; color: var(--text-muted); }
+    .comment-stars { color: var(--gold); font-size: 14px; }
+    .comment-text { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
+
+    /* ===== CONTACT ===== */
+    #contact { background: var(--cream); }
+    .contact-wrapper {
+      background: var(--navy); border-radius: var(--radius);
+      padding: 3.5rem 2.5rem; text-align: center;
+      border: 1px solid rgba(201,147,58,0.3);
+      margin-top: 2.5rem; position: relative; overflow: hidden;
+    }
+    .contact-wrapper::before {
+      content: 'تَعَلَّمْ'; font-family: 'Cormorant Garamond', serif;
+      font-size: 140px; color: rgba(201,147,58,0.05);
+      position: absolute; bottom: -20px; right: -10px;
+      direction: rtl; pointer-events: none; line-height: 1;
+    }
+    .contact-wrapper h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px; color: white; font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    .contact-wrapper p {
+      font-size: 15px; color: rgba(255,255,255,0.7);
+      margin-bottom: 2.2rem; max-width: 500px; margin-left: auto; margin-right: auto;
+    }
+    .contact-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px; margin-bottom: 2.2rem;
+    }
+    .contact-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(201,147,58,0.25);
+      border-radius: 12px; padding: 1.3rem;
+      text-decoration: none; transition: var(--transition);
+    }
+    .contact-item:hover {
+      border-color: var(--gold);
+      background: rgba(201,147,58,0.12);
+      transform: translateY(-3px);
+    }
+    .contact-icon { font-size: 22px; margin-bottom: 0.6rem; display: block; }
+    .contact-label {
+      font-size: 11px; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--gold-light);
+      margin-bottom: 4px; display: block;
+    }
+    .contact-value { font-size: 14px; color: white; font-weight: 500; }
+    
+    .wa-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #25D366; color: white;
+      padding: 14px 34px; border-radius: 10px;
+      font-size: 16px; font-weight: 600;
+      text-decoration: none; transition: var(--transition);
+      box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+    }
+    .wa-btn:hover {
+      background: #1EBA58;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(37,211,102,0.45);
+    }
+    .wa-btn svg { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
+    
+    .quran-verse {
+      font-family: 'Cormorant Garamond', serif; direction: rtl;
+      font-size: 24px; color: rgba(201,147,58,0.6);
+      margin-top: 2.5rem; line-height: 1.9;
+    }
+    .verse-trans {
+      font-size: 13px; color: rgba(255,255,255,0.4);
+      letter-spacing: 0.3px; margin-top: 6px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy-mid); padding: 2rem 2.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+      border-top: 1px solid rgba(201,147,58,0.15);
+    }
+    .footer-left { font-size: 14px; color: rgba(255,255,255,0.5); }
+    .footer-left span { color: var(--gold); font-weight: 500; }
+    .footer-right {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; color: rgba(201,147,58,0.5);
+      direction: rtl;
+    }
+
+    /* ===== WHATSAPP FLOAT ===== */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #25D366; display: flex;
+      align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+      text-decoration: none; transition: var(--transition);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 32px rgba(37,211,102,0.7);
+      animation: none;
+    }
+    .wa-float svg { width: 32px; height: 32px; fill: white; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.5); }
+      50% { box-shadow: 0 6px 36px rgba(37,211,102,0.8), 0 0 0 10px rgba(37,211,102,0.12); }
+    }
+    .wa-tooltip {
+      position: fixed; bottom: 38px; right: 98px; z-index: 999;
+      background: var(--navy); color: white; font-size: 13px;
+      padding: 7px 16px; border-radius: 8px; white-space: nowrap;
+      pointer-events: none; opacity: 0; transition: opacity 0.25s;
+      border: 1px solid rgba(201,147,58,0.3);
+    }
+    .wa-float:hover + .wa-tooltip { opacity: 1; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav { padding: 0.9rem 1.5rem; }
+      .nav-links {
+        position: fixed; top: 70px; left: 0; right: 0;
+        background: var(--navy); flex-direction: column;
+        padding: 1.5rem; gap: 1rem; border-bottom: 1px solid rgba(201,147,58,0.2);
+        transform: translateY(-150%); transition: var(--transition);
+      }
+      .nav-links.active { transform: translateY(0); }
+      .nav-toggle { display: block; }
+      
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+      .section { padding: 4.5rem 1.5rem; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .hero-arabic { font-size: 140px; }
+      
+      footer { flex-direction: column; text-align: center; }
+      .wa-tooltip { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <a class="nav-logo" href="#">
+      <span class="nav-logo-arabic">الوابل</span>
+      <span class="nav-logo-text">Al-Wabil Academy</span>
+    </a>
+    
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#importance">Why Arabic</a></li>
+      <li><a href="#method">How We Teach</a></li>
+      <li><a href="#courses">Course Levels</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    
+    <a class="nav-cta" href="https://wa.me/923368337140" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Book Free Trial
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-arabic">العربية</div>
+    <div class="hero-badge">✨ Quran & Arabic Institute Since 2014</div>
+    <h1>Al-Wabil Academy</h1>
+    <div class="hero-subtitle">Learn Arabic. Understand Quran.</div>
+    <p>Master's degree in Arabic • 11+ years teaching experience • Visual, structured method • From Alef to advanced Tajweed & Tafseer</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="https://wa.me/923368337140" target="_blank">
+        Start Your Journey →
+      </a>
+      <a class="btn-ghost" href="#courses">View Courses</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-cell"><div class="stat-num">11+</div><div class="stat-lbl">Years Teaching</div></div>
+    <div class="stat-cell"><div class="stat-num">2014</div><div class="stat-lbl">Started Online</div></div>
+    <div class="stat-cell"><div class="stat-num">MA</div><div class="stat-lbl">Arabic Degree</div></div>
+    <div class="stat-cell"><div class="stat-num">3</div><div class="stat-lbl">Course Levels</div></div>
+  </div>
+
+  <!-- IMPORTANCE OF ARABIC -->
+  <section class="section" id="importance">
+    <div class="section-inner">
+      <div class="section-label"><span>Why Learn Arabic</span></div>
+      <h2 class="section-title">The Language of Faith</h2>
+      <p class="section-desc">Arabic is not just a language — it's the key to understanding the Quran, connecting with prayer, and following the Sunnah of Prophet Muhammad ﷺ.</p>
+      
+      <div class="importance-grid">
+        <div class="importance-card">
+          <span class="importance-icon">📖</span>
+          <h3>Language of Quran</h3>
+          <p>Understand Allah's words in their original, pure form — no translation can fully capture the depth.</p>
+        </div>
+        <div class="importance-card">
+          <span class="importance-icon">🤲</span>
+          <h3>Language of Prayer</h3>
+          <p>Connect more deeply in Salah when you understand what you're reciting and supplicating.</p>
+        </div>
+        <div class="importance-card">
+          <span class="importance-icon">☪️</span>
+          <h3>Language of the Prophet ﷺ</h3>
+          <p>Study Hadith and Seerah with greater clarity and authenticity.</p>
+        </div>
+        <div class="importance-card">
+          <span class="importance-icon">🌿</span>
+          <h3>Language of Jannah</h3>
+          <p>A beautiful motivation: Arabic is spoken in Paradise. Start learning today.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEACHING METHOD -->
+  <section class="section" id="method">
+    <div class="section-inner">
+      <div class="section-label"><span>Our Approach</span></div>
+      <h2 class="section-title">How We Teach</h2>
+      <p class="section-desc">A visual, interactive, and personalized method designed for students worldwide — whether you're a complete beginner or advancing your knowledge.</p>
+      
+      <div class="method-grid">
+        <div class="method-card">
+          <span class="method-icon">💻</span>
+          <h3>Screen Sharing & Slides</h3>
+          <p>Every lesson uses PowerPoint slides with clear visuals, Arabic text, and English explanations for perfect understanding.</p>
+        </div>
+        <div class="method-card">
+          <span class="method-icon">🎥</span>
+          <h3>Video Guidance for Namaz</h3>
+          <p>Learn prayer steps through video demonstrations, then practice live with feedback to correct mistakes in real-time.</p>
+        </div>
+        <div class="method-card">
+          <span class="method-icon">📚</span>
+          <h3>Structured 3-Level System</h3>
+          <p>Progress naturally: Basic → Medium → Advance. Each level builds confidence and competence step by step.</p>
+        </div>
+        <div class="method-card">
+          <span class="method-icon">🌍</span>
+          <h3>100% Online & Flexible</h3>
+          <p>Learn from anywhere in the world. Schedule classes that fit your life — no commute, no stress.</p>
+        </div>
+      </div>
+
+      <!-- VIDEO DEMO BOX -->
+      <div class="video-container">
+        <!-- Replace VIDEO_ID with your actual YouTube video ID -->
+        <iframe 
+          src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+          title="Arabic Teaching Demo - Al-Wabil Academy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-caption">🎬 Watch a sample lesson to experience our teaching style</p>
+    </div>
+  </section>
+
+  <!-- COURSE LEVELS -->
+  <section class="section" id="courses">
+    <div class="section-inner">
+      <div class="section-label"><span>Our Courses</span></div>
+      <h2 class="section-title">Three Levels to Mastery</h2>
+      <p class="section-desc">Whether you're starting from zero or refining advanced skills, we have a path designed for your journey.</p>
+      
+      <div class="levels-grid">
+        <div class="level-card">
+          <span class="level-badge level-basic">Basic Level</span>
+          <h3>Foundations of Arabic</h3>
+          <p>Learn the alphabet, pronunciation, basic vocabulary, and simple sentences. Perfect for absolute beginners.</p>
+          <a href="https://wa.me/923368337140?text=I'm%20interested%20in%20Basic%20Level%20Arabic" class="level-btn" target="_blank">Enroll Now →</a>
+        </div>
+        
+        <div class="level-card">
+          <span class="level-badge level-medium">Medium Level</span>
+          <h3>Grammar & Comprehension</h3>
+          <p>Build sentence structure, learn essential grammar (Nahw & Sarf), and start reading simple Quranic verses with understanding.</p>
+          <a href="https://wa.me/923368337140?text=I'm%20interested%20in%20Medium%20Level%20Arabic" class="level-btn" target="_blank">Enroll Now →</a>
+        </div>
+        
+        <div class="level-card">
+          <span class="level-badge level-advance">Advance Level</span>
+          <h3>Tajweed, Tafseer & Fluency</h3>
+          <p>Master Quranic recitation rules, explore deep meanings of verses, and develop confidence in speaking and writing Arabic.</p>
+          <a href="https://wa.me/923368337140?text=I'm%20interested%20in%20Advance%20Level%20Arabic" class="level-btn" target="_blank">Enroll Now →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="section-label"><span>Your Teacher</span></div>
+      <h2 class="section-title">About Umm e Wabil</h2>
+      
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-avatar">أ</div>
+          <div class="about-name">Umm e Wabil</div>
+          <div class="about-role">Arabic & Quran Teacher</div>
+          <div class="about-divider"></div>
+          <div class="about-detail">
+            🎓 Master's in Arabic Language<br>
+            🌐 Teaching Online Since 2014<br>
+            ✨ 11+ Years Experience<br>
+            🇵🇰 Based in Pakistan • 🌍 Students Worldwide
+          </div>
+          <div class="about-arabic">أهلاً وسهلاً بكم</div>
+        </div>
+        
+        <div class="about-content">
+          <h3>Qualifications & Passion</h3>
+          <p>With a Master's degree in Arabic and over a decade of teaching experience, I specialize in making Arabic accessible, enjoyable, and meaningful for students of all ages and backgrounds.</p>
+          
+          <h3>Notable Achievement</h3>
+          <p>I have translated two volumes of the renowned Arabic grammar series <em>"Lisan ul Quran"</em> from Urdu to Arabic — reflecting my deep commitment to Quranic education and linguistic precision.</p>
+          
+          <h3>Areas of Expertise</h3>
+          <div class="skills-list">
+            <span class="skill-tag">Arabic Grammar (Nahw)</span>
+            <span class="skill-tag">Morphology (Sarf)</span>
+            <span class="skill-tag">Quran with Tajweed</span>
+            <span class="skill-tag">Tafseer (Quranic Explanation)</span>
+            <span class="skill-tag">Prayer (Namaz) Training</span>
+            <span class="skill-tag">Visual Teaching Method</span>
+            <span class="skill-tag">Online Instruction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS & RATING -->
+  <section class="section" id="testimonials">
+    <div class="section-inner">
+      <div class="section-label"><span>Student Love</span></div>
+      <h2 class="section-title">Reviews & Ratings</h2>
+      <p class="section-desc">Hear from students who have transformed their relationship with Arabic and the Quran.</p>
+      
+      <!-- Rating Box -->
+      <div class="rating-box">
+        <div style="font-size:18px; color:white; font-weight:500;">Average Student Rating</div>
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-text">5.0 based on 32 reviews</div>
+      </div>
+      
+      <!-- Comment Section -->
+      <div class="comments-section">
+        <div class="comment-form">
+          <h4>Share Your Experience</h4>
+          <form id="commentForm">
+            <input type="text" id="commentName" placeholder="Your Name *" required>
+            <input type="email" id="commentEmail" placeholder="Your Email (optional)">
+            <textarea id="commentText" placeholder="How has learning Arabic impacted you? *" required></textarea>
+            <button type="submit">Submit Review</button>
+          </form>
+        </div>
+        
+        <div class="comments-list" id="commentsList">
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-author">Aisha K.</span>
+              <span class="comment-date">March 2025</span>
+              <span class="comment-stars">★★★★★</span>
+            </div>
+            <p class="comment-text">Alhamdulillah, the visual slides made Arabic grammar click for me! I can now read Quran with understanding, not just recitation. Jazakillah Khair, Umm e Wabil!</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-author">Mohammed R.</span>
+              <span class="comment-date">February 2025</span>
+              <span class="comment-stars">★★★★★</span>
+            </div>
+            <p class="comment-text">Started from zero Arabic. After 4 months, I'm reading simple verses and my Salah feels more meaningful. The step-by-step method really works!</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-author">Fatima S.</span>
+              <span class="comment-date">January 2025</span>
+              <span class="comment-stars">★★★★☆</span>
+            </div>
+            <p class="comment-text">Very patient and knowledgeable teacher. The Tafseer lessons helped me connect with the Quran on a deeper level. Highly recommend for serious learners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <div class="section-label"><span>Get Started</span></div>
+      <h2 class="section-title">Begin Your Arabic Journey</h2>
+      
+      <div class="contact-wrapper">
+        <h3>Book a Free Trial Class</h3>
+        <p>No obligation — just a friendly conversation to find the right path for your learning goals.</p>
+        
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:sumayyanaaz101@gmail.com">
+            <span class="contact-icon">✉️</span>
+            <span class="contact-label">Email</span>
+            <span class="contact-value">sumayyanaaz101@gmail.com</span>
+          </a>
+          <a class="contact-item" href="https://wa.me/923368337140" target="_blank">
+            <span class="contact-icon">💬</span>
+            <span class="contact-label">WhatsApp</span>
+            <span class="contact-value">+92 336 8337140</span>
+          </a>
+          <a class="contact-item" href="#" target="_blank">
+            <span class="contact-icon">👥</span>
+            <span class="contact-label">Facebook</span>
+            <span class="contact-value">Arabic Lovers Channel</span>
+          </a>
+        </div>
+        
+        <a class="wa-btn" href="https://wa.me/923368337140?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20book%20a%20free%20trial%20Arabic%20class." target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Message on WhatsApp
+        </a>
+        
+        <div class="quran-verse">وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا</div>
+        <div class="verse-trans">"And He taught Adam the names of all things." — Surah Al-Baqarah 2:31</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">© 2025 <span>Al-Wabil Academy</span> • Quran & Arabic Language Institute • Teaching with heart since 2014</div>
+    <div class="footer-right">بارك الله فيكم وفي طلبكم للعلم</div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a class="wa-float" href="https://wa.me/923368337140?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20book%20a%20free%20trial%20Arabic%20class." target="_blank" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <div class="wa-tooltip">Chat on WhatsApp</div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Mobile Navigation Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      navToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        navToggle.textContent = '☰';
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Comment Form Handling
+    const commentForm = document.getElementById('commentForm');
+    const commentsList = document.getElementById('commentsList');
+    
+    commentForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('commentName').value.trim();
+      const text = document.getElementById('commentText').value.trim();
+      
+      if (name && text) {
+        // Create new comment
+        const newComment = document.createElement('div');
+        newComment.className = 'comment-card';
+        newComment.innerHTML = `
+          <div class="comment-header">
+            <span class="comment-author">${escapeHtml(name)}</span>
+            <span class="comment-date">${new Date().toLocaleDateString('en-GB', {month:'short', year:'numeric'})}</span>
+            <span class="comment-stars">★★★★★</span>
+          </div>
+          <p class="comment-text">${escapeHtml(text)}</p>
+        `;
+        
+        // Add to top of list
+        commentsList.insertBefore(newComment, commentsList.firstChild);
+        
+        // Reset form & show success
+        commentForm.reset();
+        alert('JazakAllah Khair! 🌟 Your review has been submitted.');
+      }
+    });
+    
+    // Prevent XSS
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
